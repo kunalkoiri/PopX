@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const signup = () => {
+const Signup = () => {
+  const navigate = useNavigate();
+
+  const handleCreateAccount = () => {
+    navigate('/account'); 
+  };
+
   return (
     <div className="container">
       <h2>Create your PopX account</h2>
@@ -14,9 +21,9 @@ const signup = () => {
         <input type="radio" name="agency" id="yes" /><label htmlFor="yes"> Yes</label>
         <input type="radio" name="agency" id="no" /><label htmlFor="no"> No</label>
       </div>
-      <button className="btn purple">Create Account</button>
+      <button className="btn purple" onClick={handleCreateAccount}>Create Account</button>
     </div>
   );
 };
 
-export default signup;
+export default Signup;
